@@ -111,9 +111,9 @@
 
   <nav>
     <a href="#" onclick="showPage('beranda')">Beranda</a>
-    <a href="tentang anita.html"showPage('tentang')">Tentang Saya</a>
-    <a href="Jadwal Pelajaran.html"showPage('jadwal')">Jadwal Pelajaran</a>
-    <a href="lirik lago.html"showPage('syair')">Syair Lagu</a>
+    <a href="tentang anita.html" onclicke="showPage('tentang')">Tentang Saya</a>
+    <a href="Jadwal Pelajaran.html" onclicke="showPage('jadwal')">Jadwal Pelajaran</a>
+    <a href="lirik lago.html" onclicke="showPage('syair')">Syair Lagu</a>
     <div class="dropdown">
       <a href="#" class="dropbtn">Menghitung ▼</a>
       <div class="dropdown-content">
