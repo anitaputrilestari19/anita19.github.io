@@ -358,6 +358,203 @@
     </section>
 
   </div>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Class Schedule A.Y. 2024–2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --mauve:#9c6b6e;     /* header & cells */
+      --mauve-dark:#845459; /* darker stroke */
+      --cream:#efe0cd;     /* body cells */
+      --paper:#f8f5ef;     /* canvas */
+      --grid:#d9d5cf;      /* background grid lines */
+      --shadow: 0 18px 35px rgba(0,0,0,.12);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      background:
+        /* subtle notebook grid */
+        linear-gradient(transparent 31px, var(--grid) 32px),
+        linear-gradient(90deg, transparent 31px, var(--grid) 32px);
+      background-size:32px 32px, 32px 32px;
+      background-color:#fffdf9;
+      font-family:"Raleway", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:#3f2f30;
+      padding:40px 16px;
+    }
+
+    .sheet{
+      width:min(1100px, 96vw);
+      background:var(--paper);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      position:relative;
+      padding:44px 28px 36px;
+      overflow:hidden;
+    }
+
+    /* decorative masking tape */
+    .tape{
+      position:absolute; inset:auto auto calc(100% - 46px) calc(-14px);
+      width:110px; height:34px; rotate:-15deg;
+      background:
+        repeating-linear-gradient(45deg, rgba(255,135,154,.75) 0 10px, rgba(255,135,154,.75) 10px 20px),
+        radial-gradient(circle at 8px 8px, #ffd7de 0 6px, transparent 7px);
+      background-blend-mode:multiply; filter:drop-shadow(0 6px 8px rgba(0,0,0,.12));
+      border-radius:6px; opacity:.85;
+      mask:linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      padding:6px;
+    }
+    .tape.bottom{ inset: auto calc(-14px) -18px auto; rotate:18deg; }
+
+    header{
+      text-align:center; margin-bottom:10px; position:relative;
+    }
+    .title{
+      font-family:"Playfair Display", serif; font-weight:900; letter-spacing:.5px;
+      font-size: clamp(38px, 6vw, 84px);
+      line-height:1; margin:0; color:#b7888b;
+      text-shadow: 0 6px 0 rgba(151,106,110,.25), 0 10px 18px rgba(0,0,0,.1);
+    }
+    .subtitle{ margin:10px 0 14px; font-weight:600; letter-spacing:.28em; text-transform:uppercase; }
+
+    /* cute corner doodles */
+    .doodles{ position:absolute; right:26px; top:22px; font-size:0; }
+    .heart{ width:30px; height:24px; border:6px solid #f0b; border-top-color:transparent; border-right-color:transparent; border-radius:12px 0 12px 0; display:inline-block; transform:rotate(-45deg); margin:0 4px; opacity:.6; }
+    .heart:nth-child(2){ border-color:#7cc4ff; border-top-color:transparent; border-right-color:transparent; }
+    .heart:nth-child(3){ border-color:#ffd966; border-top-color:transparent; border-right-color:transparent; }
+
+    .schedule{
+      width:100%; border-collapse:separate; border-spacing:0; table-layout:fixed;
+      background:transparent; border-radius:14px; overflow:hidden; box-shadow: inset 0 0 0 2px rgba(0,0,0,.06);
+    }
+
+    .schedule th, .schedule td{
+      border: 2px solid #2d1d1e22;
+      padding: 16px 14px; text-align:center;
+    }
+
+    .schedule thead th{
+      background:var(--mauve);
+      color:#f1e8e6; font-weight:700; font-size: clamp(14px, 2vw, 22px);
+      font-family:"Playfair Display", serif; letter-spacing:.02em;
+    }
+
+    .schedule tbody td{ background: var(--cream); font-weight:600; min-height:48px; }
+    .schedule tbody td.time{ background:#b98b8f; color:#fff8f7; font-weight:700; font-family:"Playfair Display", serif; }
+
+    .schedule thead th:first-child,
+    .schedule tbody td:first-child{ position:sticky; left:0; z-index:2; }
+
+    .grid-wrap{ overflow:auto; border-radius:14px; box-shadow:inset 0 0 0 3px #00000012; }
+
+    /* Responsive tweaks */
+    @media (max-width: 720px){
+      .subtitle{ letter-spacing:.18em; font-size:12px; }
+      .schedule th, .schedule td{ padding:12px 10px; font-size:12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="sheet" aria-labelledby="title">
+    <div class="tape"></div>
+    <div class="tape bottom"></div>
+
+    <header>
+      <h1 id="title" class="title">Jadwal Pelajaran</h1>
+      <div class="subtitle">XII DKV 2 2025–2026</div>
+      <div class="doodles" aria-hidden="true">
+        <span class="heart"></span>
+        <span class="heart"></span>
+        <span class="heart"></span>
+      </div>
+    </header>
+
+    <div class="grid-wrap">
+      <table class="schedule" role="table" aria-label="Class Schedule">
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1 -->
+          <tr>
+            <td class="time">07:00–07:40</td>
+            <td>Upacara</td><td>PPKN</td><td>Bahasa Inggris</td><td>Kejuruan 3</td><td>Pengajian</td>
+          </tr>
+          <!-- Row 2 -->
+          <tr>
+            <td class="time">07:40–08:20</td>
+            <td>Kejuruan 1</td><td>PPKN</td><td>Bahasa Inggris</td><td>Kejuruan 3</td><td>PKWH</td>
+          </tr>
+          <!-- Row 3 -->
+          <tr>
+            <td class="time">08:20–09:00</td>
+            <td>Kejuruan 1</td><td>Kejuruan 2</td><td>Bahasa Inggris</td><td>Kejuruan 3</td><td>PKWH</td>
+          </tr>
+          <!-- Row 4 -->
+          <tr>
+            <td class="time">09:00–9:40</td>
+            <td>Kejuruan 1</td><td>Kejuruan 2</td><td>Bahasa Inggris</td><td>Bahasa Indonesia</td><td>PKWH</td>
+          </tr>
+          <!-- Row 5 -->
+          <tr>
+            <td class="time">9:40–10:00</td>
+            <td>Istirahat</td><td>Istirahat</td><td>Istirahat</td><td>Istirahat</td><td>Istirahat</td>
+          </tr>
+          <!-- Row 6 -->
+          <tr>
+            <td class="time">10:00–10:40</td>
+            <td>Kejuruan 1</td><td>Matematika</td><td>Kejuruan 3</td><td>Agama Islam</td><td>Bahasa Indonesia</td>
+          </tr>
+            <td class="time">10:40–11:20</td>
+            <td>Kejuruan 2</td><td>Matematika</td><td>Kejuruan 3</td><td>Agama Islam</td><td>Bahasa Indonesia</td>
+          </tr>
+            <td class="time">11:20–12:00</td>
+            <td>Kejuruan 2</td><td>Matematika</td><td>Kejuruan 3</td><td>Agama Islam</td><td>Istirahat</td>
+          </tr>
+            <td class="time">12:00–12:45</td>
+            <td>Istirahat</td><td>Istirahat</td><td>Istirahat</td><td>Istirahat</td><td>Istirahat</td>
+          </tr>
+            <td class="time">12:45–13:25</td>
+            <td>Kejuruan 2</td><td>Mapel Pilihan DKV</td><td>Kejuruan 1</td><td>Kejuruan 1</td><td>Sholat Jum'at</td>
+          </tr>
+            <td class="time">13:25–14:05</td>
+            <td>Kejuruan 2</td><td>Mapel Pilihan DKV</td><td>Kejuruan 1</td><td>Kejuruan 1</td><td>Jum'at Bersih</td>
+          </tr>
+            <td class="time">14:05–14:45</td>
+            <td>Kejuruan 2</td><td>Mapel Pilihan DKV</td><td>PKWH</td><td>Bahasa Korea</td><td>Ekstrakurikuler</td>
+          </tr>
+            <td class="time">14:45–15:25</td>
+            <td>Kejuruan 1</td><td>Mapel Pilihan DKV</td><td>PKWH</td><td>Bahasa Korea</td><td>Ekstrakurikuler</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
+
 
   <footer>
     &copy; 2025 Anita Putri Lestari - SMKN 1 Tangerang 
